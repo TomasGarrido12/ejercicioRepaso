@@ -58,7 +58,7 @@ namespace Consola
             // Muestro todo el estante
             Console.WriteLine();
             Console.WriteLine("<------------------------------------------------->");
-            Console.WriteLine(Estante.MostrarEstante(estante));
+            Console.WriteLine(Estante.MostrarEstante(estante,p1));
             Console.ReadKey();
         }
     }

@@ -25,51 +25,39 @@ namespace BibliotecaDeClases
         {
             return productos;
         }
-        public static string MostrarEstante(Estante e)
-        {
-            return ($"La ubicacion del estante es {e.ubicacionDelEstante} y el producto es {e.GetProductos()}");
+        public static string MostrarEstante(Estante e, Producto p) // necesito hacer una sobrecargar del metodo MostrarProducto
+        {           
+              return  ($"La ubicacion del estante es {e.ubicacionDelEstante} y el producto es {p.GetMarca()}");
         }
 
         public static bool operator ==(Estante e, Producto p)
         {
-            bool noEstaEnElEstante = true;
+            bool EstaEnElEstante = true;
 
             foreach (Producto producto in e.productos)
             {
                 if (producto == p)
                 {
-                    noEstaEnElEstante = false;
-                    break;
+                    return EstaEnElEstante;
                 }
-            }
-            if (noEstaEnElEstante)
-            {
-                return noEstaEnElEstante;
             }
             return false;
 
         }
 
-        public static bool operator !=(Estante e, Producto p)
+        public static bool operator !=(Estante e, Producto p) // chequear la logica
         {
-            bool EstaEnElEstante = false;
-
             foreach (Producto producto in e.productos)
             {
-                if (producto != p)
+                if (!(producto==p))
                 {
-                    EstaEnElEstante = true;
-                    break;
+                    return true;
                 }
             }
-            if (EstaEnElEstante)
-            {
-                return EstaEnElEstante;
-            }
-            return true;
+            return false;
         }
 
-        public static bool operator +(Estante e, Producto p)
+        public static bool operator +(Estante e, Producto p) // me falta la sobre carga de sustraer
         {
             e.productos.Append(p);
             return true;

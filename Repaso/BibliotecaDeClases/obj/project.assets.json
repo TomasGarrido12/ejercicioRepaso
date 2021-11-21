@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Proem\\ejerciciosProem\\ejercicioNet\\ejerciciosPOO\\ejercicioRepaso\\Repaso\\BibliotecaDeClases\\BibliotecaDeClases.csproj",
+      "projectUniqueName": "D:\\Proem\\ejerciciosProem\\ejercicioNet\\ejerciciosPOO\\ejercicioRepaso\\ejercicioRepaso\\Repaso\\BibliotecaDeClases\\BibliotecaDeClases.csproj",
       "projectName": "BibliotecaDeClases",
-      "projectPath": "D:\\Proem\\ejerciciosProem\\ejercicioNet\\ejerciciosPOO\\ejercicioRepaso\\Repaso\\BibliotecaDeClases\\BibliotecaDeClases.csproj",
+      "projectPath": "D:\\Proem\\ejerciciosProem\\ejercicioNet\\ejerciciosPOO\\ejercicioRepaso\\ejercicioRepaso\\Repaso\\BibliotecaDeClases\\BibliotecaDeClases.csproj",
       "packagesPath": "C:\\Users\\garri\\.nuget\\packages\\",
-      "outputPath": "D:\\Proem\\ejerciciosProem\\ejercicioNet\\ejerciciosPOO\\ejercicioRepaso\\Repaso\\BibliotecaDeClases\\obj\\",
+      "outputPath": "D:\\Proem\\ejerciciosProem\\ejercicioNet\\ejerciciosPOO\\ejercicioRepaso\\ejercicioRepaso\\Repaso\\BibliotecaDeClases\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\garri\\AppData\\Roaming\\NuGet\\NuGet.Config",
