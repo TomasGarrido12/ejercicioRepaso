@@ -9,7 +9,7 @@ namespace BibliotecaDeClases
     public class Estante
     {
         private int ubicacionDelEstante;
-        private Producto[] productos;
+        public Producto[] productos;
 
         private Estante(int capacidad)
         {
@@ -25,9 +25,10 @@ namespace BibliotecaDeClases
         {
             return productos;
         }
-        public static string MostrarEstante(Estante e, Producto p) // necesito hacer una sobrecargar del metodo MostrarProducto
-        {           
-              return  ($"La ubicacion del estante es {e.ubicacionDelEstante} y el producto es {p.GetMarca()}");
+        public static string MostrarEstante(Estante e) // necesito hacer una sobrecargar del metodo MostrarProducto. Quiero hacer un join con todos los elementos del array producto pero no se como
+        {
+            string s1 = string.Join("",(Producto)e.productos); //necesito castear los tipos a productos pero no me deja
+            //return ($"El estante tiene una ubicacion {e.ubicacionDelEstante} y un producto {e.productos}");
         }
 
         public static bool operator ==(Estante e, Producto p)
@@ -45,22 +46,27 @@ namespace BibliotecaDeClases
 
         }
 
-        public static bool operator !=(Estante e, Producto p) // chequear la logica
+        public static bool operator !=(Estante e, Producto p) 
         {
-            foreach (Producto producto in e.productos)
-            {
-                if (!(producto==p))
-                {
-                    return true;
-                }
-            }
-            return false;
+            return !(e == p);
         }
 
         public static bool operator +(Estante e, Producto p) // me falta la sobre carga de sustraer
         {
-            e.productos.Append(p);
-            return true;
+            if (e.ubicacionDelEstante > e.productos.Length)
+            {
+                foreach (Producto producto in e.productos)
+                {
+                    if (e == p)
+                    {
+                        return false;
+                    }
+                }
+                e.productos.Append(p);
+                return true;
+            }
+            return false;
+
         }
     }
 }
