@@ -37,7 +37,8 @@ namespace BibliotecaDeClases
 
         public static bool operator ==(Producto p1, Producto p2) // dos productos van a ser iguales si sus marcas y codigos de barras son iguales
         {
-            return p1.marca == p2.marca && p1.codigoDeBarra == p2.codigoDeBarra;  //preguntar por este metodo la parte de codigoDeBarra
+           
+            return p1 is not null && p2 is not null && p1.marca == p2.marca && p1.codigoDeBarra == p2.codigoDeBarra;  //preguntar por este metodo la parte de codigoDeBarra
         }
 
         public static bool operator !=(Producto p1, Producto p2)

@@ -27,8 +27,13 @@ namespace BibliotecaDeClases
         }
         public static string MostrarEstante(Estante e) // necesito hacer una sobrecargar del metodo MostrarProducto. Quiero hacer un join con todos los elementos del array producto pero no se como
         {
-            string s1 = string.Join("",(Producto)e.productos); //necesito castear los tipos a productos pero no me deja
-            //return ($"El estante tiene una ubicacion {e.ubicacionDelEstante} y un producto {e.productos}");
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"La ubicacion es: {e.ubicacionDelEstante}");
+            for (int i = 0; i < e.productos.Length; i++)
+            {
+                sb.AppendLine(Producto.MostrarProducto(e.productos[i]));
+            }
+            return sb.ToString();
         }
 
         public static bool operator ==(Estante e, Producto p)
@@ -46,27 +51,25 @@ namespace BibliotecaDeClases
 
         }
 
-        public static bool operator !=(Estante e, Producto p) 
+        public static bool operator !=(Estante e, Producto p)
         {
             return !(e == p);
         }
 
         public static bool operator +(Estante e, Producto p) // me falta la sobre carga de sustraer
         {
-            if (e.ubicacionDelEstante > e.productos.Length)
+            if (e != p)//con la sobrecarga del != recorro el array de productos y me fijo que el producto no esté en el estante
             {
-                foreach (Producto producto in e.productos)
+                for (int i = 0; i < e.productos.Length; i++)
                 {
-                    if (e == p)
+                    if (e.productos[i] is null)// me fijo que en la posicion del array de productos en la cual estoy parado haya un espacio, en caso de haberlo agrego un producto en esa posicion
                     {
-                        return false;
+                        e.productos[i] = p;
+                        return true;
                     }
                 }
-                e.productos.Append(p);
-                return true;
             }
             return false;
-
         }
     }
 }
